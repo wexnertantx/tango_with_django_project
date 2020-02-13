@@ -7,8 +7,17 @@
  {% endblock %}
 
  {% block body_block %}
- {% if categories %}
+ 
 <h1>Homepage</h1>
+		<h1>Rango says...</h1>
+			{% if user.is_authenticated %}
+				howdy {{ user.username }}!
+			{% else %}
+				hey there partner!
+			{% endif %}
+		<br />
+			<strong>{{ boldmessage }}</strong><br />
+{% if categories %}		
 <h2>Most Liked Categories</h2>
 	<ul>
 	{% for category in categories %}
